@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="dark" lang="ru"><head>
+﻿<!DOCTYPE html><html class="dark" lang="ru"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>БакиБар - B2B &amp; Инвесторам</title>
@@ -122,7 +122,7 @@
 <a class="text-on-surface hover:text-primary transition-colors hover:text-primary-fixed-dim transition-all duration-300" href="sex.html">Секс</a>
 <a class="text-on-surface hover:text-primary transition-colors hover:text-primary-fixed-dim transition-all duration-300" href="contacts.html">Контакты</a>
 </div>
-<div class="md:hidden text-primary">
+<div onclick="openMobileMenu()" style="cursor:pointer;">
 <span class="material-symbols-outlined cursor-pointer" data-icon="menu">menu</span>
 </div>
 </nav>
@@ -193,4 +193,38 @@
 </footer>
 
 
+
+<!-- ═══ MOBILE MENU (injected) ═══ -->
+<div id="mobile-menu-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,10,10,0.97);flex-direction:column;align-items:center;justify-content:center;gap:2rem;backdrop-filter:blur(8px);">
+  <button id="mobile-menu-close" onclick="closeMobileMenu()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;cursor:pointer;font-size:2rem;line-height:1;padding:.5rem;">✕</button>
+  <nav style="display:flex;flex-direction:column;align-items:center;gap:1.75rem;text-align:center;">
+    <a href="index.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Главная</a>
+    <a href="catalog.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Каталог</a>
+    <a href="about.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">О бренде</a>
+    <a href="b2b.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">B2B / Инвесторам</a>
+    <a href="sex.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Секс</a>
+    <a href="where-to-buy.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Где купить</a>
+    <a href="contacts.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Контакты</a>
+  </nav>
+</div>
+<script>
+  function openMobileMenu() {
+    var m = document.getElementById('mobile-menu-overlay');
+    m.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    var m = document.getElementById('mobile-menu-overlay');
+    m.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+  // Wire up ALL possible hamburger triggers
+  document.addEventListener('DOMContentLoaded', function() {
+    var triggers = document.querySelectorAll('[data-mobile-menu-btn], #mobile-menu-btn, .mobile-menu-btn');
+    triggers.forEach(function(t) { t.addEventListener('click', openMobileMenu); });
+  });
+</script>
 </body></html>

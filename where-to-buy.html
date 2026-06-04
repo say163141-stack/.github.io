@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="dark" lang="ru" style=""><head>
+﻿<!DOCTYPE html><html class="dark" lang="ru" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Где купить | БакиБар</title>
@@ -109,8 +109,11 @@
 <!-- TopAppBar -->
 <header class="fixed top-0 z-50 w-full bg-surface/80 backdrop-blur-md">
 <nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<a href="index.html" class="font-display-lg text-headline-md font-bold text-primary">БавиБар</a>
-<div class="hidden md:flex gap-gutter items-center"><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="index.html">Главная</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="catalog.html">Каталог</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="about.html">О бренде</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="b2b.html">B2B/Инвесторам</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="sex.html">Секс</a><a class="text-primary border-b-2 border-primary pb-1 font-label-caps uppercase tracking-widest text-[11px]" href="where-to-buy.html">Где купить</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="contacts.html">Контакты</a></div>
+<a href="index.html" class="font-display-lg text-headline-md font-bold text-primary">БакиБар</a>
+<div class="hidden md:flex gap-gutter items-center"><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="index.html">Главная</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="catalog.html">Каталог</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="about.html">О бренде</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="b2b.html">B2B/Инвесторам</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="sex.html">Секс</a><a class="text-primary border-b-2 border-primary pb-1 font-label-caps uppercase tracking-widest text-[11px]" href="where-to-buy.html">Где купить</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps uppercase tracking-widest text-[11px]" href="contacts.html">Контакты</a><button class="md:hidden text-primary p-2" onclick="openMobileMenu()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
 </nav>
 </header>
 <main>
@@ -246,4 +249,38 @@
     </script>
 
 
+
+<!-- ═══ MOBILE MENU (injected) ═══ -->
+<div id="mobile-menu-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,10,10,0.97);flex-direction:column;align-items:center;justify-content:center;gap:2rem;backdrop-filter:blur(8px);">
+  <button id="mobile-menu-close" onclick="closeMobileMenu()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;cursor:pointer;font-size:2rem;line-height:1;padding:.5rem;">✕</button>
+  <nav style="display:flex;flex-direction:column;align-items:center;gap:1.75rem;text-align:center;">
+    <a href="index.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Главная</a>
+    <a href="catalog.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Каталог</a>
+    <a href="about.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">О бренде</a>
+    <a href="b2b.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">B2B / Инвесторам</a>
+    <a href="sex.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Секс</a>
+    <a href="where-to-buy.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Где купить</a>
+    <a href="contacts.html" onclick="closeMobileMenu()" style="color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.9">Контакты</a>
+  </nav>
+</div>
+<script>
+  function openMobileMenu() {
+    var m = document.getElementById('mobile-menu-overlay');
+    m.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    var m = document.getElementById('mobile-menu-overlay');
+    m.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+  // Wire up ALL possible hamburger triggers
+  document.addEventListener('DOMContentLoaded', function() {
+    var triggers = document.querySelectorAll('[data-mobile-menu-btn], #mobile-menu-btn, .mobile-menu-btn');
+    triggers.forEach(function(t) { t.addEventListener('click', openMobileMenu); });
+  });
+</script>
 </body></html>
